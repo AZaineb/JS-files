@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test2(){²
+            correct=true;
+            var nom=document.getElementById("n").value;
+            var index = nom.indexOf("");
+            for (var i=0;i<nom.length;i++){
+                if ((nom[i].toUpperCase()<"A") || (nom[i].toUpperCase()>"Z") && (index == -1) ){
+                    correct=false;
+                }
+            }
+            if (correct==false){
+                alert("Nom incorrect");
+                return false;
+            }
+            var pnom=document.getElementById("p").value;
+            for (var i=0;i<pnom.length;i++){
+                if ((pnom[i].toUpperCase()<"A") || (pnom[i].toUpperCase()>"Z")){
+                    correct=false;
+                }
+            }
+            if (correct==false){
+                alert("prenom incorrect");
+                return false;
+            }   
+        }
+//autre fonction:
+/* function test2(){
+    var ind=document.getElementById("s").selectedIndex;
+    var op=document.getElementById("s").option[ind].value;
+    if (ind==0){
+        alert("Contactez nous sur + op");
+    }
+    else if (ind==1){
+        alert("Contactez nous sur + op");
+    }
+    else{
+        alert("Contactez nous sur + op");
+    }
+}
+*/
+    </script>
+</head>
+<body>
+    <form onsubmit="test2()">
+        Nom: <input type="text" id="n"> <br>
+        Prenom: <input type="text" id="p"> <br>
+        Contact: <select id="s">
+                    <option>Tel</option>
+                    <option>Skype</option>
+                    <option>Email</option>
+                </select><br>
+        <input type="submit" value="Envoyer">
+        <input type="reset" value="Annuler">
+    </form>
+</body>
+</html>
